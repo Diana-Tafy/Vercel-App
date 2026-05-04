@@ -3,7 +3,7 @@
 I developed this executive-level data analytics project to transform 149,000+ raw transactions into actionable business intelligence. This project showcases my ability to build a modern data stack that analyzes sales performance, customer behavior, and operational efficiency across three New York City locations: Hell's Kitchen, Astoria, and Lower Manhattan.
 
 🚀 Live Portfolio
-View my work: [https://vercel-app-kv5e.vercel.app/]
+View my work: [https://vercel-app-kv5e.vercel.app/] [ https://vercel-app-kv5e-c1ccjl9wt-diana-tafys-projects.vercel.app/]
 
 I hosted this via Vercel to ensure seamless, high-performance delivery of the dashboard and presentation.
 
