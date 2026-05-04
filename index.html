@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bright Coffee Shop | Data Analysis Portfolio</title>
+    <title>Bright Coffee Shop | Analytics Portfolio</title>
     <style>
         :root {
-            --primary: #c4a484; /* Light Brown/Tan */
-            --dark: #1a1a1a;    /* Near Black */
-            --accent: #6f4e37;  /* Coffee Brown */
+            --primary: #c4a484; 
+            --dark: #0a0a0a;    
+            --accent: #6f4e37;  
+            --card-bg: #1a1a1a;
         }
 
         body {
@@ -17,28 +18,30 @@
             color: #ffffff;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
         }
 
-        /* Navigation Bar */
+        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1.2rem 8%;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0,0,0,0.95);
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        .logo { font-size: 1.4rem; font-weight: bold; color: var(--primary); letter-spacing: 1px; }
-        .nav-links a { color: white; text-decoration: none; margin-left: 25px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; }
+        .logo { font-size: 1.4rem; font-weight: bold; color: var(--primary); letter-spacing: 2px; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 25px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; transition: 0.3s; }
+        .nav-links a:hover { opacity: 1; color: var(--primary); }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            height: 75vh;
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
+            height: 85vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
                         url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&q=80&w=2070');
             background-size: cover;
             background-position: center;
@@ -51,32 +54,49 @@
         }
 
         .hero h1 { font-size: 4.5rem; margin-bottom: 15px; letter-spacing: -2px; line-height: 1.1; }
-        .hero p { font-size: 1.3rem; max-width: 700px; color: var(--primary); margin-bottom: 30px; font-style: italic; }
+        .hero p { font-size: 1.3rem; max-width: 700px; color: var(--primary); margin-bottom: 35px; font-style: italic; }
+
+        /* Sections */
+        section { padding: 100px 10%; }
+        .section-title { font-size: 2.5rem; color: var(--primary); margin-bottom: 40px; text-align: center; }
 
         /* Dashboard Container */
         .container {
             max-width: 1200px;
-            margin: -120px auto 60px; /* Floating effect over hero */
-            padding: 0 20px;
+            margin: -150px auto 0;
             position: relative;
             z-index: 10;
         }
 
         .dashboard-card {
             background: #ffffff;
-            padding: 12px;
+            padding: 10px;
             border-radius: 24px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.6);
         }
 
-        iframe {
-            width: 100%;
-            height: 850px;
-            border: none;
-            border-radius: 18px;
+        iframe { width: 100%; height: 800px; border: none; border-radius: 18px; }
+
+        /* Features/Insights Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
 
-        /* Call to Action Button */
+        .card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .card h3 { color: var(--primary); margin-bottom: 15px; }
+        .card p { color: #aaa; line-height: 1.7; font-family: sans-serif; font-size: 0.95rem; }
+
+        /* Button */
         .btn {
             background-color: var(--primary);
             color: var(--dark);
@@ -84,14 +104,12 @@
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+            transition: 0.3s;
             display: inline-block;
         }
+        .btn:hover { background-color: white; transform: scale(1.05); }
 
-        .btn:hover { background-color: white; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-
-        footer { padding: 60px 20px; text-align: center; font-size: 0.8rem; opacity: 0.4; letter-spacing: 1px; }
+        footer { padding: 80px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); opacity: 0.5; font-size: 0.8rem; }
     </style>
 </head>
 <body>
@@ -99,41 +117,48 @@
 <nav>
     <div class="logo">BRIGHT COFFEE</div>
     <div class="nav-links">
-        <a href="#">Analysis</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#insights">Insights</a>
         <a href="https://canva.link/c82u3uexhioj8nz" target="_blank">Strategy</a>
     </div>
 </nav>
 
 <section class="hero">
     <h1>Your morning, <br>optimized by data.</h1>
-    <p>Transforming raw transactional data into high-growth retail intelligence.</p>
-    <a href="https://canva.link/c82u3uexhioj8nz" class="btn" target="_blank">View Executive Presentation</a>
+    <p>Professional retail intelligence and executive KPI tracking.</p>
+    <a href="#analysis" class="btn">Explore Dashboard</a>
 </section>
 
-<div class="container">
+<div class="container" id="analysis">
     <div class="dashboard-card">
         <iframe src="https://lookerstudio.google.com/embed/reporting/981bdc48-5b97-4db5-b057-08d734202d78/page/0y3wF" allowfullscreen></iframe>
     </div>
 </div>
 
-<!-- NEW STRATEGIC INSIGHTS SECTION -->
-<section style="padding: 80px 8%; background: #000; text-align: left;">
-    <h2 style="color: var(--primary); font-size: 2.5rem; margin-bottom: 20px;">Strategic Insights</h2>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px;">
-        <div>
-            <h3 style="color: white;">Retail Performance</h3>
-            <p style="color: #aaa; line-height: 1.6;">Utilized advanced SQL and Looker Studio to process over 149,000 transactions, uncovering revenue trends and identifying Hell's Kitchen as a primary growth driver.</p>
+<section id="insights">
+    <h2 class="section-title">Strategic Overview</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Retail Performance</h3>
+            <p>Processed 149k+ transaction records using advanced SQL optimization to identify high-revenue periods and top-performing store locations.</p>
         </div>
-        <div>
-            <h3 style="color: white;">Executive KPI Tracking</h3>
-            <p style="color: #aaa; line-height: 1.6;">Designed interactive dashboards to monitor product category performance and ROI, facilitating data-driven decision-making for executive leadership.</p>
+        <div class="card">
+            <h3>Growth Drivers</h3>
+            <p>Analyzed product categories to determine inventory efficiency, focusing on high-margin coffee beans and branded products.</p>
         </div>
+        <div class="card">
+            <h3>Executive Reporting</h3>
+            <p>Designed for CEO-level clarity, transforming complex raw data into actionable visual insights for better business intelligence.</p>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 60px;">
+        <a href="https://canva.link/c82u3uexhioj8nz" class="btn" target="_blank">View Full Strategy Deck</a>
     </div>
 </section>
 
 <footer>
-    <p>PROFESSIONAL PORTFOLIO | DATA ANALYST & SOFTWARE ENGINEER</p>
-    <p>POWERED BY SQL, LOOKER STUDIO & VERCEL</p>
+    <p>DATA ANALYST & SOFTWARE ENGINEER PORTFOLIO</p>
+    <p>SQL • LOOKER STUDIO • VERCEL • BIGQUERY</p>
 </footer>
 
 </body>
