@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Coffee Shop | Data Analysis Portfolio</title>
+    <style>
+        :root {
+            --primary: #6F4E37; /* Coffee Brown */
+            --bg: #FDF5E6;     /* Cream */
+            --text: #2C1B0E;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .dashboard-wrapper {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 8px;
+        }
+        .actions {
+            margin: 40px 0;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            background-color: #5a3d2b;
+        }
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Bright Coffee Shop Analysis</h1>
+        <p>Retail Optimization & Executive KPI Dashboard</p>
+    </div>
+</header>
+
+<div class="container">
+    <div class="dashboard-wrapper">
+        <!-- PASTE YOUR LOOKER STUDIO LINK INSIDE THE SRC QUOTES BELOW -->
+        <iframe src="https://datastudio.google.com/embed/981bdc48-5b97-4db5-b057-08d734202d78/page/0y3wF" allowfullscreen></iframe>
+    </div>
+
+    <div class="actions">
+        <h3>Project Documentation</h3>
+        <a href="https://canva.link/c82u3uexhioj8nz" class="btn" target="_blank">
+            View Executive Presentation (Canva)
+        </a>
+    </div>
+</div>
+
+<footer>
+    <p>Powered by SQL, Looker Studio, and Vercel</p>
+</footer>
+
+</body>
+</html>
